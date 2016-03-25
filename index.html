@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" ng-app="MovieTheaterApp">
+<head>
+  <meta charset="utf-8">
+  <title>My HTML File</title>
+  <link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script src="/vendor/angular/angular.js"></script>
+  <script src="/js/controllers/controller.js"></script>
+</head>
+<body ng-controller="MovieTheaterCtrl">
+
+	<div id="main">
+
+		<div class="total" ng-model='cart'>
+			<h1>Total: <span>${{ total }}</span></h1>
+		</div>
+
+		<div class="section">
+			<h2>Purchased:</h2>
+			<div class="shopping-list" ng-model='cart' ng-repeat="(key, value) in cart">
+				<div>{{ key }}: {{ value }}</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="sellables-buttons" ng-repeat="item in sellables">
+				<div class="button-wrap">
+					<button class="add" ng-click="addToCart(item.name)">Add {{ item.name }}</button>
+					<button class="remove" ng-click="removeFromCart(item.name)">Remove {{ item.name }}</button>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>
