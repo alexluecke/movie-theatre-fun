@@ -2,7 +2,7 @@
 
 Initialize dependencies by running `bower install`.
 
-# Serving the code
+**Serving the code**
 
 If you have [node.js](https://nodejs.org/en/) installed, run `node static_server.js` and then visit [http://localhost:8888](http://localhost:8888) in your browser. If node.js is not installed, configure a server of choice to target the project.
 
