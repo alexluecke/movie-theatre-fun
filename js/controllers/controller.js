@@ -52,8 +52,8 @@ MovieTheaterApp.controller('MovieTheaterCtrl', function ($scope) {
 	};
 
 	var resetInputs = function() {
-			$scope.inputs.name = '';
-			$scope.inputs.cost = '';
+		for (var prop in $scope.inputs)
+			$scope.inputs[prop] = '';
 	};
 
 	$scope.addToCart = function(name) {
