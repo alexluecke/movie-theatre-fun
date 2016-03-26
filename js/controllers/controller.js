@@ -4,13 +4,13 @@ MovieTheaterApp.controller('MovieTheaterCtrl', function ($scope) {
 
 	$scope.total = 0.0;
 
-  $scope.cart = {};
+	$scope.cart = {};
 
-  $scope.sellables = [
+	$scope.sellables = [
 		{ 'name': 'popcorn', 'price': 3.0 },
 		{ 'name': 'snickers', 'price': 4.0 },
 		{ 'name': 'soda', 'price': 2.0 }
-  ];
+	];
 
 	var getDefaultCost = function(x) {
 				return x.price * $scope.cart[x.name];
@@ -30,8 +30,8 @@ MovieTheaterApp.controller('MovieTheaterCtrl', function ($scope) {
 		'soda': getDefaultCost,
 	};
 
-  // Initialize cart items:
-  $scope.sellables.forEach(function(x) {
+	// Initialize cart items:
+	$scope.sellables.forEach(function(x) {
 		$scope.cart[x.name] = 0;
 	});
 
