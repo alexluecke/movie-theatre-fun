@@ -13,7 +13,7 @@ MovieTheaterApp.controller('MovieTheaterCtrl', function ($scope) {
 	];
 
 	var getDefaultCost = function(x) {
-				return x.price * $scope.cart[x.name];
+		return x.price * $scope.cart[x.name];
 	};
 
 	var costFunctions = {
