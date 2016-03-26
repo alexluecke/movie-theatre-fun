@@ -51,6 +51,11 @@ MovieTheaterApp.controller('MovieTheaterCtrl', function ($scope) {
 		return true;
 	};
 
+	var resetInputs = function() {
+			$scope.inputs.name = '';
+			$scope.inputs.cost = '';
+	};
+
 	$scope.addToCart = function(name) {
 		if ($scope.cart[name] !== 'undefined')
 			$scope.cart[name] += 1;
@@ -84,7 +89,7 @@ MovieTheaterApp.controller('MovieTheaterCtrl', function ($scope) {
 			$scope.sellables.push(data);
 			costFunctions[data.name] = defaultCostFunc;
 			$scope.cart[data.name] = 0;
-			$scope.inputs = { 'name': '', 'cost': '' };
+			resetInputs();
 		}
 	};
 });
