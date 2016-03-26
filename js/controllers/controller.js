@@ -12,7 +12,7 @@ MovieTheaterApp.controller('MovieTheaterCtrl', function ($scope) {
 		{ 'name': 'soda', 'price': 2.0 }
 	];
 
-	var getDefaultCost = function(x) {
+	var defaultCostFunc = function(x) {
 		return x.price * $scope.cart[x.name];
 	};
 
@@ -22,8 +22,8 @@ MovieTheaterApp.controller('MovieTheaterCtrl', function ($scope) {
 				3 * Math.floor($scope.cart[x.name]/5) + $scope.cart[x.name]%5
 			);
 		},
-		'popcorn': getDefaultCost,
-		'soda': getDefaultCost,
+		'popcorn': defaultCostFunc,
+		'soda': defaultCostFunc,
 	};
 
 	// Initialize cart items:
