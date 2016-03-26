@@ -28,11 +28,18 @@
 		}
 	}
 
+	.shopping-list {
+		div {
+			text-transform: capitalize;
+		}
+	}
+
 	.button-wrap {
 		float: left;
 		margin: 4px;
 
 		button {
+			text-transform: capitalize;
 			border: 0px hidden transparent;
 			display: inline-block;
 			border-radius: 4px;
