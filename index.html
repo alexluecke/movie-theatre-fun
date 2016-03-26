@@ -18,18 +18,27 @@
 
 		<div class="section">
 			<h2>Purchased:</h2>
-			<div class="shopping-list" ng-repeat="(key, value) in cart">
+			<div ng-model="cart" class="shopping-list" ng-repeat="(key, value) in cart">
 				<div>{{ key }}: {{ value }}</div>
 			</div>
 		</div>
 
 		<div class="section">
-			<div class="sellables-buttons" ng-repeat="item in sellables">
+			<div ng-model="sellables" class="sellables-buttons" ng-repeat="item in sellables">
 				<div class="button-wrap">
 					<button class="add" ng-click="addToCart(item.name)">Add {{ item.name }}</button>
 					<button class="remove" ng-click="removeFromCart(item.name)">Remove {{ item.name }}</button>
 				</div>
 			</div>
+		</div>
+
+		<div class="section">
+			<form ng-submit="addSellable()">
+				Add a sellable item:
+				<input ng-model="inputs.name" type="text" value="" name="name" placeholder='Item Name'>
+				<input ng-model="inputs.cost" type="text" value="" name="cost" size='3' placeholder='Cost'>
+				<input type="submit" id="submit" value="Add Sellable" />
+			</form>
 		</div>
 
 	</div>
