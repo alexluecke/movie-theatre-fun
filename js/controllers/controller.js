@@ -21,6 +21,16 @@ MovieTheaterApp.controller('MovieTheaterCtrl', function ($scope) {
 		return x.cost * $scope.cart[x.name];
 	};
 
+	var costFunctions = {
+		'snickers': function(x) {
+			return x.cost * (
+				3 * Math.floor($scope.cart[x.name]/5) + $scope.cart[x.name]%5
+			);
+		},
+		'popcorn': defaultCostFunc,
+		'soda': defaultCostFunc,
+	};
+
 	var getSanitizedInputData = function() {
 		return {
 			'name': $scope.inputs.name.trim(),
@@ -39,16 +49,6 @@ MovieTheaterApp.controller('MovieTheaterCtrl', function ($scope) {
 			return false;
 		}
 		return true;
-	};
-
-	var costFunctions = {
-		'snickers': function(x) {
-			return x.cost * (
-				3 * Math.floor($scope.cart[x.name]/5) + $scope.cart[x.name]%5
-			);
-		},
-		'popcorn': defaultCostFunc,
-		'soda': defaultCostFunc,
 	};
 
 	$scope.addToCart = function(name) {
