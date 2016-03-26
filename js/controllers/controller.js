@@ -21,6 +21,26 @@ MovieTheaterApp.controller('MovieTheaterCtrl', function ($scope) {
 		return x.cost * $scope.cart[x.name];
 	};
 
+	var getSanitizedInputData = function() {
+		return {
+			'name': $scope.inputs.name.trim(),
+			'cost': Number.parseFloat($scope.inputs.cost)
+		};
+	};
+
+	var validates = function() {
+		var data = getSanitizedInputData();
+		if (!data.name) {
+			alert('Supply a sellable name.');
+			return false;
+		}
+		if (isNaN(data.cost) || data.cost <= 0.0) {
+			alert('Supply a sellable cost greater than 0.');
+			return false;
+		}
+		return true;
+	};
+
 	var costFunctions = {
 		'snickers': function(x) {
 			return x.cost * (
@@ -50,7 +70,8 @@ MovieTheaterApp.controller('MovieTheaterCtrl', function ($scope) {
 		// have been added, multiply the cost by the number added, and sum the
 		// total.
 		$scope.total = $scope.sellables.map(function(x) {
-			// There are specials on particular
+			// There are specials on particular item quantities, call the associated
+			// cost function to determine price.
 			return costFunctions[x.name](x);
 		}).reduce(function(x,y) {
 			return x+y;
@@ -58,13 +79,11 @@ MovieTheaterApp.controller('MovieTheaterCtrl', function ($scope) {
 	};
 
 	$scope.addSellable = function() {
-		if ($scope.inputs.name.trim() && Number.parseFloat($scope.inputs.cost)) {
-			$scope.sellables.push({
-				'name': $scope.inputs.name,
-				'cost': Number.parseFloat($scope.inputs.cost),
-			});
-			costFunctions[$scope.inputs.name] = defaultCostFunc;
-			$scope.cart[$scope.inputs.name] = 0;
+		if (validates()) {
+			var data = getSanitizedInputData();
+			$scope.sellables.push(data);
+			costFunctions[data.name] = defaultCostFunc;
+			$scope.cart[data.name] = 0;
 			$scope.inputs = { 'name': '', 'cost': '' };
 		}
 	};
