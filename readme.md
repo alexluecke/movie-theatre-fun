@@ -1,12 +1,20 @@
-Review the following technical problem. The solution should be delivered via a Git repository, JSFiddle, or a ZIP file.
+# Running the code:
+
+Initialize dependencies by running `bower install`.
+
+# Serving the code
+
+If you have [node.js](https://nodejs.org/en/) installed, run `node static_server.js` and then visit [http://localhost:8888](http://localhost:8888) in your browser. If node.js is not installed, configure a server of choice to target the project.
+
+----
 
 # The problem:
 
 A movie theatre sells the three concession stand items listed below:
 
-- Popcorn = $3
+- Popcorn  = $3
 - Snickers = $4 (or five for the price of three)
-- Soda = $2
+- Soda     = $2
 
 Implement a web application for the movie theatre that allows a user to add the above items to a shopping cart and calculates the total for the given collection of items. For example, the following basket should total up to $23.
 
@@ -18,6 +26,8 @@ Deliver your solution as a Javascript web application using a modern client-side
 
 Consider testability, documentation, and other good coding practices in your solution. Your application can run exclusively in the browser and doesn’t need to have a server-side component (no model).
 
-Additional optional challenges:
+----
+
+*Additional optional challenges:*
 
 1. Allow for adding new items at runtime without restarting/rebuilding/refreshing the application.
