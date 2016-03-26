@@ -18,13 +18,9 @@ MovieTheaterApp.controller('MovieTheaterCtrl', function ($scope) {
 
 	var costFunctions = {
 		'snickers': function(x) {
-			if (Math.floor($scope.cart[x.name]/5) > 0) {
-				return x.price * (
-					3 * Math.floor($scope.cart[x.name]/5) + $scope.cart[x.name]%5
-				);
-			} else {
-				return getDefaultCost(x);
-			}
+			return x.price * (
+				3 * Math.floor($scope.cart[x.name]/5) + $scope.cart[x.name]%5
+			);
 		},
 		'popcorn': getDefaultCost,
 		'soda': getDefaultCost,
