@@ -17,16 +17,17 @@
 		</div>
 
 		<div class="section">
-			<h2>Purchased:</h2>
+			<h2>Cart:</h2>
 			<div ng-model="cart" class="shopping-list" ng-repeat="(key, value) in cart">
 				<div>{{ key }}: {{ value }}</div>
 			</div>
 		</div>
 
 		<div class="section">
+			<h2>Update cart:</h2>
 			<div ng-model="sellables" class="sellables-buttons" ng-repeat="item in sellables">
 				<div class="button-wrap">
-					<button class="add" ng-click="addToCart(item.name)">Add {{ item.name }}</button>
+					<button class="add" ng-click="addToCart(item.name)">Add {{ item.name }} (${{ item.cost }}*)</button>
 					<button class="remove" ng-click="removeFromCart(item.name)">Remove {{ item.name }}</button>
 				</div>
 			</div>
@@ -40,6 +41,8 @@
 				<input type="submit" id="submit" value="Add Sellable" />
 			</form>
 		</div>
+
+		<div class="clearfix note">* Specials apply.</div>
 
 	</div>
 
