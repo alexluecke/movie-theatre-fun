@@ -2,6 +2,8 @@ var MovieTheaterApp = angular.module('MovieTheaterApp', []);
 
 MovieTheaterApp.controller('SnackCtrl', function ($scope) {
 
+	var self = this;
+
 	// Model data
 	$scope.inputs = { 'name': '', 'cost': '' };
 	$scope.total = 0.0;
@@ -31,15 +33,15 @@ MovieTheaterApp.controller('SnackCtrl', function ($scope) {
 		'soda': defaultCostFunc,
 	};
 
-	var getSanitizedInputData = function() {
+	self.getSanitizedInputData = function() {
 		return {
 			'name': $scope.inputs.name.trim(),
 			'cost': Number.parseFloat($scope.inputs.cost)
 		};
 	};
 
-	var validates = function() {
-		var data = getSanitizedInputData();
+	self.validates = function() {
+		var data = self.getSanitizedInputData();
 		if (!data.name) {
 			alert('Supply a sellable name.');
 			return false;
@@ -51,7 +53,7 @@ MovieTheaterApp.controller('SnackCtrl', function ($scope) {
 		return true;
 	};
 
-	var resetInputs = function() {
+	self.resetInputs = function() {
 		for (var prop in $scope.inputs)
 			$scope.inputs[prop] = '';
 	};
@@ -84,12 +86,12 @@ MovieTheaterApp.controller('SnackCtrl', function ($scope) {
 	};
 
 	$scope.addSellable = function() {
-		if (validates()) {
-			var data = getSanitizedInputData();
+		if (self.validates()) {
+			var data = self.getSanitizedInputData();
 			$scope.sellables.push(data);
 			costFunctions[data.name] = defaultCostFunc;
 			$scope.cart[data.name] = 0;
-			resetInputs();
+			self.resetInputs();
 		}
 	};
 });
