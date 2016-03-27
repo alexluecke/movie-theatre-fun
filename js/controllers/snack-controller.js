@@ -1,6 +1,6 @@
 var MovieTheaterApp = angular.module('MovieTheaterApp', []);
 
-MovieTheaterApp.controller('MovieTheaterCtrl', function ($scope) {
+MovieTheaterApp.controller('SnackCtrl', function ($scope) {
 
 	// Model data
 	$scope.inputs = { 'name': '', 'cost': '' };
