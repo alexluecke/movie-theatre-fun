@@ -67,3 +67,17 @@
 		}
 	}
 }
+
+@media screen and (max-width: 768px) {
+	#main {
+		.button-wrap {
+			float: none;
+			width: 100%;
+			margin: 0;
+			margin-bottom: 1em;
+			button {
+				margin-bottom: 0em;
+			}
+		}
+	}
+}
