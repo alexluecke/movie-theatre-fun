@@ -20,5 +20,11 @@
     "angular": "~1.5.3",
     "bootstrap": "~3.3.6",
     "font-awesome": "~4.5.0"
+  },
+  "devDependencies": {
+    "jasmine-core": "jasmine#~2.4.1",
+    "karma": "~0.4.6",
+    "karma-jasmine": "~0.3.8",
+    "angular-mocks": "~1.5.3"
   }
 }

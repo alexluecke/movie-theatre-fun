@@ -1,0 +1,25 @@
+{
+  "name": "movie-theater",
+  "version": "0.0.0",
+  "description": "Initialize dependencies by running `bower install`.",
+  "main": "karma.conf.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-bower": "^1.0.1",
+    "karma-jasmine": "^0.3.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github:alexluecke/movie-theatre-fun.git"
+  },
+  "author": "Alex Luecke",
+  "license": "ISC"
+}
