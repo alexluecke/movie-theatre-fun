@@ -1,4 +1,4 @@
-var MovieTheaterApp = angular.module('MovieTheaterApp', []);
+var MovieTheaterApp = angular.module('MovieTheaterApp', ['snackFilters']);
 
 MovieTheaterApp.controller('SnackCtrl', function ($scope) {
 
