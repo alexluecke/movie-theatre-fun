@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="/assets/css/main.css">
   <script src="/vendor/angular/angular.js"></script>
+  <script src="/js/filters/snack-filter.js"></script>
   <script src="/js/controllers/snack-controller.js"></script>
 </head>
 <body ng-controller="SnackCtrl">
@@ -13,7 +14,7 @@
 	<div id="main">
 
 		<div class="total">
-			<h1>Total: <span>${{ total }}</span></h1>
+			<h1>Total: <span>{{ total | currency }}</span></h1>
 		</div>
 
 		<div class="section">
@@ -27,7 +28,7 @@
 			<h2>Update cart:</h2>
 			<div ng-model="sellables" class="sellables-buttons" ng-repeat="item in sellables">
 				<div class="button-wrap">
-					<button class="add" ng-click="addToCart(item.name)">Add {{ item.name }} (${{ item.cost }}*)</button>
+					<button class="add" ng-click="addToCart(item.name)">Add {{ item.name }} ({{ item.cost | currency }}*)</button>
 					<button class="remove" ng-click="removeFromCart(item.name)">Remove {{ item.name }}</button>
 				</div>
 			</div>
