@@ -16,12 +16,13 @@ module.exports = function(config) {
 			'jquery',
 		],
 
-			// list of files / patterns to load in the browser
+		// list of files / patterns to load in the browser
 		files: [
 			'vendor/jquery/dist/jquery.js',
 			'vendor/angular/angular.js',
 			'vendor/angular-mocks/angular-mocks.js',
-			'js/controllers/snack-controller.js',
+			'js/filters/*.js',
+			'js/controllers/*.js',
 			'test/spec/controllers/*.js'
 		],
 
