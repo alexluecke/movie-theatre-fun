@@ -96,8 +96,8 @@ MovieTheaterApp.controller('SnackCtrl', function ($scope) {
 	};
 
 	/*
-	 * This function handles the form data, validated, sanitizes, and then
-	 * stores the newly supplied sellable.
+	 * This function handles the form data, validation, sanitization, and adds
+	 * new sellable.
 	 */
 	$scope.addSellable = function() {
 		if (self.validates()) {
