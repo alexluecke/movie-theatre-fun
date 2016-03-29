@@ -8,7 +8,7 @@ If you have [node.js](https://nodejs.org/en/) installed, run `node static_server
 
 # Testing
 
-Install Karma `sudo npm install -g karma-cli`. Run `karma start` and connect to the service by visitingthe supplied address in a browser. Once connected to the server, use `karma run` in another terminal to run the tests.
+Install Karma `sudo npm install -g karma-cli`. Run `karma start` and connect to the service by visiting the supplied address in a browser. Once connected to the server, use `karma run` in another terminal to run the tests.
 
 ----
 
