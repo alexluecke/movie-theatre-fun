@@ -1,6 +1,6 @@
 # Running the code:
 
-Initialize dependencies by running `npm install` and `bower install`.
+Install dependencies by running `npm install` and `bower install`.
 
 **Serving the code**
 
