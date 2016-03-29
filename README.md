@@ -1,10 +1,14 @@
 # Running the code:
 
-Initialize dependencies by running `bower install`.
+Initialize dependencies by running `npm install` and `bower install`.
 
 **Serving the code**
 
 If you have [node.js](https://nodejs.org/en/) installed, run `node static_server.js` and then visit [http://localhost:8888](http://localhost:8888) in your browser. If node.js is not installed, configure a server of choice to target the project.
+
+# Testing
+
+Install Karma `sudo npm install -g karma-cli`. Run `karma start` and connect to the service by visitingthe supplied address in a browser. Once connected to the server, use `karma run` in another terminal to run the tests.
 
 ----
 
